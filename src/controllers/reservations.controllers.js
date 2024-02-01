@@ -8,8 +8,8 @@ class ReservationsControllers{
             const idClient = req.params.idclient;
             const baseUrl = req.baseUrl.split('/')[1];
             if (baseUrl != "admin") {
-                const user = clientsServices.getClientById(2);
-                if (idClient != user.id) {
+                const clients = clientsServices.getClients();
+                if (!clients.find(x => x.id == idClient)) {
                     res.send("Le client ne peut pas ajouter de réservation pour un autre client.")
                 }
             }

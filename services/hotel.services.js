@@ -15,8 +15,7 @@ class HotelServices{
 
     getRoomById(id){
         try {
-            const data = fs.readFileSync(path, 'utf8');
-            const rooms = JSON.parse(data).rooms;
+            const rooms = this.getRooms();
             const room = rooms.find(x => x.id == id);
             return room;
         } catch (error) {

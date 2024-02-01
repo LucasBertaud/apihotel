@@ -15,8 +15,7 @@ class UsersServices {
 
     getClientById(id){
         try {
-            const data = fs.readFileSync(path, 'utf8');
-            const clients = JSON.parse(data).clients;
+            const clients = this.getClients();
             const client = clients.find(x => x.id == id);
             return client;
         } catch (error) {

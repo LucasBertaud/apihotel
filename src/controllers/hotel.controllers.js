@@ -19,7 +19,6 @@ class HotelServices{
         return(req, res) => {
             const id = req.params.id;
             const response = hotelServices.getRoomById(id);
-            console.log(response)
             if (response == undefined) {
                 res.send("La chambre n'a pas été trouvée.");
             }
